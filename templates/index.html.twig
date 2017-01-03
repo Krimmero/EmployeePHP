@@ -8,7 +8,7 @@
 <body>
 <h1>{{title}}</h1>
 
-<ul>
+{#<ul>
     {% for employee in json %}
         <li>Employee  {{ employee.Id }}
             <ul>
@@ -18,7 +18,7 @@
             </ul>
         </li>
     {% endfor %}
-</ul>
+</ul>#}
 <table border="1px">
     <tr>                            <!-- create headers for table -->
         <th>Id</th>
@@ -46,9 +46,40 @@
 </form>
 
 <br>
+<ul style="list-style-type: none">
 
-{{ jsonId.Id }}
-{{ jsonId.FirstName }}
-{{ jsonId.LastName }}
-{{ jsonId.Position }}
+<li>Id: {{ jsonId.Id }}</li>
+<li>Name: {{ jsonId.FirstName }} {{ jsonId.LastName }}</li>
+<li>Position: {{ jsonId.Position }}</li>
+
+</ul>
+
+<br>
+
+<h2>Search Lastname</h2><br>
+
+<form action="/EmployeePHP/index.php" method="post">
+    search: <input type="text" name="searchData"><br>
+</form>
+<br>
+
+<table border="1px">
+    <tr>                            <!-- create headers for table -->
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>PhoneNumber</th>
+        <th>Position</th>
+    </tr>
+
+{% for employee in jsonName %}       <!--- loop over json objects -->
+    <tr>
+        <td>{{ employee.Id }} </td>
+        <td>{{ employee.FirstName }}</td>
+        <td>{{ employee.LastName }}</td>
+        <td>{{ employee.PhoneNumber }}</td>
+        <td>{{ employee.Position }}</td>
+    </tr>
+{% endfor %}
+</table>
 </body>
