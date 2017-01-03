@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style/mystyle.css">
+
+</head>
+
+<body>
+<h1>{{title}}</h1>
+
+<ul>
+    {% for employee in json %}
+        <li>Employee  {{ employee.Id }}
+            <ul>
+                <li>Employee ID: {{ employee.Id }}</li>
+                <li>FirstName: {{ employee.FirstName }}</li>
+                <li>LastName: {{ employee.LastName }}</li>
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+<table border="1px">
+    <tr>                            <!-- create headers for table -->
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>PhoneNumber</th>
+        <th>Position</th>
+    </tr>
+    {% for employee in json %}       <!--- loop over json objects -->
+        <tr>
+            <td> {{ employee.Id }} </td>
+            <td>{{ employee.FirstName }}</td>
+            <td>{{ employee.LastName }}</td>
+            <td>{{ employee.PhoneNumber }}</td>
+            <td>{{ employee.Position }}</td>
+        </tr>
+    {% endfor %}
+
+
+</table>
+<br>
+<form action="/EmployeePHP/index.php" method="post">
+    input Id: <input type="number" name="idValue"><br>
+
+</form>
+
+<br>
+
+{{ jsonId.Id }}
+{{ jsonId.FirstName }}
+{{ jsonId.LastName }}
+{{ jsonId.Position }}
+</body>

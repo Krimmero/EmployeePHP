@@ -1,0 +1,28 @@
+body{
+    font-family: Consolas;
+    color: #51c6ff;
+    background-color: #fae1ff;
+}
+
+th{
+    background-color: #ff5cc6;
+    border-radius: 2px ;
+
+}
+
+td{
+    background-color: #ffb7fa;
+    border-radius: 2px ;
+    color: #07a6ff;
+
+}
+
+h1
+{
+    font-family: "Arial Black";
+}
+
+table
+{
+    border-radius: 5px ;
+}
